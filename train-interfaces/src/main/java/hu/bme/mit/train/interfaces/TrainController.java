@@ -1,13 +1,16 @@
 package hu.bme.mit.train.interfaces;
 
-public interface TrainController {
+import java.time.LocalDate;
+import com.google.common.collect.*;
 
-	void followSpeed();
+public interface TrainSensor {
 
-	int getReferenceSpeed();
+	int getSpeedLimit();
 
-	void setSpeedLimit(int speedLimit);
+	void overrideSpeedLimit(int speedLimit);
 
-	void setJoystickPosition(int joystickPosition);
+	void tachograph();
+
+	Table<LocalDate, Integer, Integer>  getTachograph();
 
 }
